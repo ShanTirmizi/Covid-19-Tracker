@@ -10,6 +10,7 @@ const url = 'https://disease.sh/v3/covid-19/countries'
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
+  const [countryStats, setCountryStats] = useState({});
   const fetchCountries = async () => {
     try {
       const response = await fetch(url)
@@ -24,14 +25,41 @@ function App() {
     }
   }
 
+  const fetchWorldwide = async () => {
+    const allUrl = 'https://disease.sh/v3/covid-19/all'
+    try {
+      const response = await fetch(allUrl)
+      const countryData = await response.json()
+      setCountryStats(countryData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  useEffect(() => {
+    fetchWorldwide()
+  }, [])
+
   useEffect(() => {
     fetchCountries()
   }, [countries])
 
+
+
   const onCountryChange = async (e) => {
     const countryValue = e.target.value
+    const dataUrl = countryValue === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : 
+    `https://disease.sh/v3/covid-19/countries/${countryValue}`
+    try {
+      const response = await fetch(dataUrl)
+      const countryData = await response.json()
+      // console.log(countryData)
+      setCountry(countryValue)
+      setCountryStats(countryData)
+    } catch (error) {
+      console.log(error)
+    }
 
-    setCountry(countryValue)
   }
   return (
     <div className="app">
@@ -53,9 +81,9 @@ function App() {
         </div>
 
         <div className="app__stats">
-          <InfoBox title='Coronavirus Cases' cases={1234} total={2000} />
-          <InfoBox title='Recovered' cases={1234} total={4000} />
-          <InfoBox title='Deaths' cases={1234} total={3000}/>
+          <InfoBox title='Coronavirus Cases' cases={countryStats.todayCases} total={countryStats.cases} />
+          <InfoBox title='Recovered' cases={countryStats.todayRecovered} total={countryStats.recovered} />
+          <InfoBox title='Deaths' cases={countryStats.todayDeaths} total={countryStats.deaths}/>
         </div>
         <Map />
       </div>
