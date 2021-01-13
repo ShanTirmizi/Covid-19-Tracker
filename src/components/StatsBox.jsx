@@ -1,18 +1,18 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 
-const InfoBox = ({title, cases, total}) => {
+const StatsBox = ({title, cases, total}) => {
     return (
-        <Card className='infoBox'>
+        <Card className='statsBox'>
             <CardContent>
                 {/* Title  */}
-                <Typography className='infoBox__title' color='textSecondary'>
+                <Typography className='statsBox__title' color='textSecondary'>
                     {title}
                 </Typography>
                 {/* no of Cases */}
-                <h2 className='infoBox__cases'>{cases}</h2>
+                <h2 className='statsBox__cases'>{cases}</h2>
                 {/* 1.2 mil cases Total */}
-                <Typography className='infoBox__total' color='textSecondary'>
+                <Typography className='statsBox__total' color='textSecondary'>
                     {total} Total
                 </Typography>
             </CardContent>
@@ -20,4 +20,4 @@ const InfoBox = ({title, cases, total}) => {
     )
 }
 
-export default InfoBox
+export default StatsBox
