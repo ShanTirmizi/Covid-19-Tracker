@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import StatsBox from './components/StatsBox';
 import Map from './components/Map';
 import Table from './components/Table/Table';
+import Graph from './components/Graph'
 
 import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/core'
 
@@ -104,9 +105,8 @@ function App() {
               <Table countries={tableData} />
               <h3>Worldwide new cases</h3>
             </CardContent>
-      </Card>
-
-      
+            <Graph />
+      </Card>      
     </div>
   );
 }
