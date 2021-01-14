@@ -19,6 +19,7 @@ function App() {
   const [tableData, setTableData] = useState([]);
   const [mapCoord, setMapCoord] = useState({lat: 34.80746, lng: -40.4796})
   const [mapZoom, setMapZoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([])
 
 // console.log(mapCoord)
 
@@ -35,6 +36,7 @@ function App() {
       const dataSorted = countriesData.sort((a, b) => b.cases - a.cases)
       setTableData(dataSorted);
       setCountries(countries);
+      setMapCountries(countriesData)
     } catch (error) {
       console.log(error)
     }
@@ -65,7 +67,7 @@ function App() {
     const countryValue = e.target.value
     const dataUrl = countryValue === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : 
     `https://disease.sh/v3/covid-19/countries/${countryValue}`
-    // try {
+    try {
       const response = await fetch(dataUrl)
       const countryData = await response.json()
       // console.log(countryData)
@@ -74,9 +76,9 @@ function App() {
       // console.log(countryData.countryInfo.lat)
       setMapCoord([countryData.countryInfo.lat, countryData.countryInfo.long]);
       setMapZoom(4);
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    } catch (error) {
+      console.log(error)
+    }
 
   }
 
@@ -105,7 +107,7 @@ function App() {
           <StatsBox title='Recovered' cases={countryStats.todayRecovered} total={countryStats.recovered} />
           <StatsBox title='Deaths' cases={countryStats.todayDeaths} total={countryStats.deaths}/>
         </div>
-        <Map center={mapCoord} zoom={mapZoom} />
+        <Map countries={mapCountries} center={mapCoord} zoom={mapZoom} />
       </div>
       <Card className="app__right">
             <CardContent>
