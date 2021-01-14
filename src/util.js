@@ -41,6 +41,8 @@ const circleDataOnMap = (data, casesType = "cases") =>
             </Popup>
         </Circle>
     ))
-
+    
+const formattedStat = (stat) =>   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
 export {circleDataOnMap}
+export {formattedStat}

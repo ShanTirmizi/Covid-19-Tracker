@@ -74,8 +74,8 @@ const Graph = ({ casesType = 'cases' }) => {
         try {
           const response = await fetch(allUrl)
           const allData = await response.json()
-          const charData = chartDataAll(allData)
-          setData(charData )
+          let charData = chartDataAll(allData, casesType)
+          setData(charData)
         //   console.log(charData)
         } catch (error) {
           console.log(error)
