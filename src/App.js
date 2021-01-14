@@ -1,9 +1,11 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import StatsBox from './components/StatsBox';
-import Map from './components/Map';
+import Map from './components/Map/Map';
 import Table from './components/Table/Table';
-import Graph from './components/Graph'
+import Graph from './components/Graph';
+import numeral from "numeral";
+import 'leaflet/dist/leaflet.css'
 
 import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/core'
 
@@ -14,8 +16,11 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryStats, setCountryStats] = useState({});
-  const [tableData, setTableData] = useState([]); 
+  const [tableData, setTableData] = useState([]);
+  const [mapCoord, setMapCoord] = useState({lat: 34.80746, lng: -40.4796})
+  const [mapZoom, setMapZoom] = useState(3);
 
+// console.log(mapCoord)
 
   const fetchCountries = async () => {
     try {
@@ -60,15 +65,18 @@ function App() {
     const countryValue = e.target.value
     const dataUrl = countryValue === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' : 
     `https://disease.sh/v3/covid-19/countries/${countryValue}`
-    try {
+    // try {
       const response = await fetch(dataUrl)
       const countryData = await response.json()
       // console.log(countryData)
       setCountry(countryValue)
       setCountryStats(countryData)
-    } catch (error) {
-      console.log(error)
-    }
+      // console.log(countryData.countryInfo.lat)
+      setMapCoord([countryData.countryInfo.lat, countryData.countryInfo.long]);
+      setMapZoom(4);
+    // } catch (error) {
+    //   console.log(error)
+    // }
 
   }
 
@@ -97,7 +105,7 @@ function App() {
           <StatsBox title='Recovered' cases={countryStats.todayRecovered} total={countryStats.recovered} />
           <StatsBox title='Deaths' cases={countryStats.todayDeaths} total={countryStats.deaths}/>
         </div>
-        <Map />
+        <Map center={mapCoord} zoom={mapZoom} />
       </div>
       <Card className="app__right">
             <CardContent>

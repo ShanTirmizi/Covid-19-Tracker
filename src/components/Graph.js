@@ -76,7 +76,7 @@ const Graph = ({ casesType = 'cases' }) => {
           const allData = await response.json()
           const charData = chartDataAll(allData)
           setData(charData )
-          console.log(charData)
+        //   console.log(charData)
         } catch (error) {
           console.log(error)
         }
