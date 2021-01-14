@@ -1,11 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import StatsBox from './components/StatsBox';
+import StatsBox from './components/StatsBox/StatsBox';
 import Map from './components/Map/Map';
 import Table from './components/Table/Table';
 import Graph from './components/Graph';
 import numeral from "numeral";
-import 'leaflet/dist/leaflet.css'
+import 'leaflet/dist/leaflet.css';
+import { formattedStat } from './util';
 
 import { FormControl, Select, MenuItem, Card, CardContent } from '@material-ui/core'
 
@@ -20,6 +21,7 @@ function App() {
   const [mapCoord, setMapCoord] = useState({lat: 34.80746, lng: -40.4796})
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([])
+  const [valueType, setValueType] = useState("cases");
 
 // console.log(mapCoord)
 
@@ -103,19 +105,27 @@ function App() {
         </div>
 
         <div className="app__stats">
-          <StatsBox title='Coronavirus Cases' cases={countryStats.todayCases} total={countryStats.cases} />
-          <StatsBox title='Recovered' cases={countryStats.todayRecovered} total={countryStats.recovered} />
-          <StatsBox title='Deaths' cases={countryStats.todayDeaths} total={countryStats.deaths}/>
+          <StatsBox  title='Coronavirus Cases' cases={formattedStat(countryStats.todayCases)} total={formattedStat(countryStats.cases)}
+          onClick={e => setValueType('cases')}
+          active={valueType === 'cases'} />
+          <StatsBox title='Recovered' cases={formattedStat(countryStats.todayRecovered)} total={formattedStat(countryStats.recovered)} 
+          onClick={e => setValueType('recovered')}
+          active={valueType === 'recovered'}
+          />
+          <StatsBox title='Deaths' cases={formattedStat(countryStats.todayDeaths)} total={formattedStat(countryStats.deaths)}
+           onClick={e => setValueType('deaths')}
+           active={valueType === 'deaths'}
+          />
         </div>
-        <Map countries={mapCountries} center={mapCoord} zoom={mapZoom} />
+        <Map casesType={valueType} countries={mapCountries} center={mapCoord} zoom={mapZoom} />
       </div>
       <Card className="app__right">
             <CardContent>
               <h3>Live Cases by Country</h3>
               <Table countries={tableData} />
-              <h3>Worldwide new cases</h3>
+              <h3>Worldwide new {valueType} </h3>
             </CardContent>
-            <Graph />
+            <Graph  casesType={valueType}  />
       </Card>      
     </div>
   );

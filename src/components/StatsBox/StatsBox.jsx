@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
+import './StatsBox.css'
 
-const StatsBox = ({title, cases, total}) => {
+const StatsBox = ({title, cases, total, active ,...props}) => {
     return (
-        <Card className='statsBox'>
+        <Card onClick={props.onClick} className={`statsBox ${active && 'statsBox--selected'}`}>
             <CardContent>
                 {/* Title  */}
                 <Typography className='statsBox__title' color='textSecondary'>
