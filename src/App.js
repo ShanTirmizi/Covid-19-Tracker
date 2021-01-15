@@ -85,15 +85,18 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className="app__left">
+    <>
+    
+      <div className="app__top">
         <div className="app__header">
-          <h1>covid 19 tracker</h1>
+          <div className="app__header__box">
+            <h1 className="app__h1">Covid-19 Tracker</h1>
+          </div>
           <FormControl className='app__dropdown'>
             <Select variant='outlined'
               onChange={onCountryChange}
               value={country}>
-              <MenuItem value='worldwide'>Worldwide</MenuItem>
+              <MenuItem  value='worldwide'>Worldwide</MenuItem>
               {countries.map((country) => {
                 {/* console.log(country) */}
                 return (
@@ -126,8 +129,8 @@ function App() {
               <h3>Worldwide new {valueType} </h3>
             </CardContent>
             <Graph  casesType={valueType}  />
-      </Card>      
-    </div>
+      </Card>
+    </>
   );
 }
 
