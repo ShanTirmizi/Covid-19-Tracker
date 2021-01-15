@@ -7,6 +7,8 @@
 .table tr {
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+    border-radius: 50px;
 }
 
 .table td {
@@ -15,5 +17,5 @@
 
 
 .table tr:nth-of-type(odd) {
-    background-color: pink
+    background-color: var(--color-2);
 }

@@ -122,14 +122,17 @@ function App() {
         </div>
         <Map casesType={valueType} countries={mapCountries} center={mapCoord} zoom={mapZoom} />
       </div>
-      <Card className="app__right">
-            <CardContent>
+      <div className="app__mid">
+            <div className="app__table">
               <h3>Live Cases by Country</h3>
               <Table countries={tableData} />
-              <h3>Worldwide new {valueType} </h3>
-            </CardContent>
-            <Graph  casesType={valueType}  />
-      </Card>
+            </div>
+            <div className="app__charts">
+              <h3>Worldwide Charts</h3>
+              <h4>Worldwide new {valueType} </h4>
+              <Graph  casesType={valueType}  />
+            </div>
+      </div>
     </>
   );
 }
