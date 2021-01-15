@@ -11,6 +11,7 @@
 
 .statsBox--selected {
     border-top: 10px solid var(--color-4);
+    border-bottom: 10px solid var(--color-4);
     /* background-color: var(--color-2) !important; */
 
 }

@@ -129,8 +129,12 @@ function App() {
             </div>
             <div className="app__charts">
               <h3>Worldwide Charts</h3>
-              <h4>Worldwide new {valueType} </h4>
-              <Graph  casesType={valueType}  />
+              <h4>Worldwide new cases </h4>
+              <Graph  casesType={"cases"}  />
+              <h4>Worldwide new recovered </h4>
+              <Graph  casesType={"recovered"}  />
+              <h4>Worldwide new deaths </h4>
+              <Graph  casesType={"deaths"}  />
             </div>
       </div>
     </>
