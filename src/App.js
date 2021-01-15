@@ -86,7 +86,6 @@ function App() {
 
   return (
     <>
-    
       <div className="app__top">
         <div className="app__header">
           <div className="app__header__box">
@@ -137,6 +136,101 @@ function App() {
               <h4>Worldwide new deaths </h4>
               <Graph  casesType={"deaths"}  />
             </div>
+      </div>
+      <div className="app__charity">
+              <div className="app__charity__title">
+                <h1>Covid-19 Charities</h1>
+              </div>
+              <div className='app__charity__left__right'>
+                <div className="app__charity__left">
+                  <div className="app__charity__item">
+                    <div className="app__charity__item__top">
+                      <h2>
+                        Charity A
+                      </h2>
+                      <div className="app__charity__logo"></div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                      pariatur.
+                    </p>
+                  </div>
+                  <div className="app__charity__item">
+                    <div className="app__charity__item__top">
+                        <h2>
+                          Charity A
+                        </h2>
+                        <div className="app__charity__logo"></div>
+                      </div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                        pariatur.
+                      </p>
+                  </div>
+                  <div className="app__charity__item">
+                    <div className="app__charity__item__top">
+                        <h2>
+                          Charity A
+                        </h2>
+                        <div className="app__charity__logo"></div>
+                      </div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                        pariatur.
+                      </p>
+                  </div>
+                </div>
+                <div className="app__charity__right">
+                  <div className="app__charity__item">
+                    <div className="app__charity__item__top">
+                        <h2>
+                          Charity A
+                        </h2>
+                        <div className="app__charity__logo"></div>
+                      </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                          pariatur.
+                        </p>
+                    </div>
+                    <div className="app__charity__item">
+                      <div className="app__charity__item__top">
+                        <h2>
+                          Charity A
+                        </h2>
+                        <div className="app__charity__logo"></div>
+                      </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                          pariatur.
+                        </p>
+                    </div>
+                    <div className="app__charity__item">
+                      <div className="app__charity__item__top">
+                        <h2>
+                          Charity A
+                        </h2>
+                        <div className="app__charity__logo"></div>
+                      </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                          pariatur.
+                        </p>
+                    </div>
+                  </div>
+              </div>
       </div>
     </>
   );
