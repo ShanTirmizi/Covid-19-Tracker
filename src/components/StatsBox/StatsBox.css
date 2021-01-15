@@ -8,6 +8,11 @@
 
 }
 
+.statsBox:hover {
+    border-left: 10px solid var(--color-4);
+    border-right: 10px solid var(--color-4);
+}
+
 .statsBox:not(:last-child) {
     margin-right: 10px;
 }
