@@ -93,34 +93,35 @@ function App() {
             <h1 className="app__h1">Covid-19 Tracker</h1>
           </div>
           <FormControl className='app__dropdown'>
-            <Select variant='outlined'
+            <Select className='app__select' variant='outlined'
               onChange={onCountryChange}
               value={country}>
-              <MenuItem  value='worldwide'>Worldwide</MenuItem>
+              <MenuItem className='app__menu' value='worldwide'>Worldwide</MenuItem>
               {countries.map((country) => {
                 {/* console.log(country) */}
                 return (
-                <MenuItem key={country.id} value={country.value}>{country.name}</MenuItem>
+                <MenuItem className='app__menu' key={country.id} value={country.value}>{country.name}</MenuItem>
                 )
               })}
             </Select>
           </FormControl>
         </div>
-
-        <div className="app__stats">
-          <StatsBox  title='Coronavirus Cases' cases={formattedStat(countryStats.todayCases)} total={formattedStat(countryStats.cases)}
-          onClick={e => setValueType('cases')}
-          active={valueType === 'cases'} />
-          <StatsBox title='Recovered' cases={formattedStat(countryStats.todayRecovered)} total={formattedStat(countryStats.recovered)} 
-          onClick={e => setValueType('recovered')}
-          active={valueType === 'recovered'}
-          />
-          <StatsBox title='Deaths' cases={formattedStat(countryStats.todayDeaths)} total={formattedStat(countryStats.deaths)}
-           onClick={e => setValueType('deaths')}
-           active={valueType === 'deaths'}
-          />
+        <div className='app__top__mid'>
+          <div className="app__stats">
+            <StatsBox  title='Coronavirus Cases' cases={formattedStat(countryStats.todayCases)} total={formattedStat(countryStats.cases)}
+            onClick={e => setValueType('cases')}
+            active={valueType === 'cases'} />
+            <StatsBox title='Recovered' cases={formattedStat(countryStats.todayRecovered)} total={formattedStat(countryStats.recovered)} 
+            onClick={e => setValueType('recovered')}
+            active={valueType === 'recovered'}
+            />
+            <StatsBox title='Deaths' cases={formattedStat(countryStats.todayDeaths)} total={formattedStat(countryStats.deaths)}
+            onClick={e => setValueType('deaths')}
+            active={valueType === 'deaths'}
+            />
+          </div>
+          <Map casesType={valueType} countries={mapCountries} center={mapCoord} zoom={mapZoom} />
         </div>
-        <Map casesType={valueType} countries={mapCountries} center={mapCoord} zoom={mapZoom} />
       </div>
       <div className="app__mid">
             <div className="app__table">

@@ -2,7 +2,10 @@
     flex: 1;
     cursor: pointer;
     background-color: var(--color-3) !important;
-    border-radius: 20px !important;
+    border-radius: 150px !important;
+    border: 10px solid var(--color-2);
+    text-align: center;
+
 }
 
 .statsBox:not(:last-child) {
@@ -10,8 +13,10 @@
 }
 
 .statsBox--selected {
-    border-top: 10px solid var(--color-4);
-    border-bottom: 10px solid var(--color-4);
+    /* border-top: 10px solid var(--color-4);
+    border-bottom: 10px solid var(--color-4); */
+    border: 10px solid var(--color-4);
+
     /* background-color: var(--color-2) !important; */
 
 }
