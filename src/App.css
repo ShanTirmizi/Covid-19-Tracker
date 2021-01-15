@@ -15,30 +15,57 @@ body {
 .app__header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 30px 25px 30px;
   justify-content: space-between;
+  background-color: var(--color-3);
+  padding: 10px;
+  border-radius: 50px;
+
+
+}
+
+.app__h1 {
+  padding: 10px 15px 10px 15px;
+  color: var(--color-4);
+  /* border: 10px solid var(--color-4);
+  border-radius: 50px; */
+  /* margin-left: 200px !important;
+  right: 20px; */
 }
 
 .app__dropdown{
   background-color: var(--color-2);
   border-radius: 50px;
+  /* color: var(--color-4); */
   /* padding: 0; */
   /* border: none; */
   /* outline: none; */
   /* background: none; */
-
 }
 
+.app__select {
+  color: var(--color-4) !important;
+}
+
+.app__menu {
+  color: var(--color-4) !important;
+  background-color: var(--color-3) !important;
+
+
+}
 /* .app__dropdown__text {
   color: aquamarine;
 } */
 
-.app__top {
-  margin: 20px 30px 50px 30px
-  /* flex: 0.9; */
-  /* display: flex; */
-  /* justify-content: space-evenly; */
+
+.app__top__mid {
+  margin: 20px 30px 50px 30px;
+  background-color: var(--color-3);
+  border-radius: 50px;
+  padding: 20px;
+
 }
+
 
 .app__header__box {
   background-color: var(--color-3);
@@ -48,11 +75,7 @@ body {
   /* height: ; */
 }
 
-.app__h1 {
-  padding: 10px 15px 10px 15px;
-  color: var(--color-4);
 
-}
 
 .app__stats {
   display: flex;
