@@ -1,6 +1,8 @@
 .statsBox {
     flex: 1;
     cursor: pointer;
+    background-color: var(--color-3) !important;
+    border-radius: 20px !important;
 }
 
 .statsBox:not(:last-child) {
@@ -8,18 +10,27 @@
 }
 
 .statsBox--selected {
-    border-top: 10px solid greenyellow;
+    border-top: 10px solid var(--color-4);
+    /* background-color: var(--color-2) !important; */
+
 }
 
+.statsBox__title {
+    color: var(--color-4) !important;
+    font-weight: 600 !important;
+}
+
+
+
 .statsBox__cases {
-    color: red;
+    color: var(--color-4);
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
 }
 
 .statsBox__total {
-    color: silver;
+    color: var(--color-4) !important;
     font-size: 700 !important;
     font-size: 0.8rem !important;
     margin-top: 15px !important;

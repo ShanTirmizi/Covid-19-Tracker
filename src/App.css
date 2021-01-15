@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #fff3b0;
+  background-color: var(--color-1);
 }
 
 .app {
@@ -19,8 +19,37 @@ body {
   justify-content: space-between;
 }
 
-.app__left {
-  flex: 0.9;
+.app__dropdown{
+  background-color: var(--color-2);
+  border-radius: 50px;
+  /* padding: 0; */
+  /* border: none; */
+  /* outline: none; */
+  /* background: none; */
+
+}
+
+.app__dropdown__text {
+  color: aquamarine;
+}
+
+.app__top {
+  margin: 20px 30px 50px 30px
+  /* flex: 0.9; */
+  /* display: flex; */
+  /* justify-content: space-evenly; */
+}
+
+.app__header__box {
+  background-color: var(--color-3);
+  border-radius: 50px;
+  /* height: ; */
+}
+
+.app__h1 {
+  padding: 10px 15px 10px 15px;
+  color: var(--color-4);
+
 }
 
 .app__stats {
