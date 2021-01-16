@@ -18,3 +18,16 @@ code {
   --color-3: #1b1b2f;
   --color-4: #e43f5a;
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border: 5px solid var(--color-3);
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-4);
+}
