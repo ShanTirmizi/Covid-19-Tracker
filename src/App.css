@@ -222,8 +222,48 @@ body {
 
 
 
-@media (max-width: 990px) {
+
+@media (max-width: 720px) {
   .app {
     flex-direction: column;
   }
+
+  .app__top {
+    width: 200%;
+  }
+
+  .app__header {
+    display: flex;
+    width: auto;
+    align-items: center;
+    margin: 20px 30px 25px 30px;
+    justify-content: space-between;
+    background-color: var(--color-3);
+    padding: 10px;
+    border-radius: 50px;
+  }
+
+  .app__mid {
+    width: 200%;
+    justify-content: center;
+
+    margin: 0 auto;
+
+  }
+
+  .app__table {
+    flex: 1;
+    /* width: 200%; */
+  }
+
+  /* .app__table h3 {
+    margin: 0;
+  } */
+
+  .app__charts {
+    flex: 1;
+    width: 200%;
+  }
+
 }
+

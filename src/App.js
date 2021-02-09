@@ -123,10 +123,6 @@ function App() {
         </div>
       </div>
       <div className="app__mid">
-            <div className="app__table">
-              <h3>Live Cases by Country</h3>
-              <Table countries={tableData} />
-            </div>
             <div className="app__charts">
               <h3>Worldwide Charts</h3>
               <h4>Worldwide new cases </h4>
@@ -136,8 +132,12 @@ function App() {
               <h4>Worldwide new deaths </h4>
               <Graph  casesType={"deaths"}  />
             </div>
+            <div className="app__table">
+              <h3>Live Cases by Country</h3>
+              <Table countries={tableData} />
+            </div>
       </div>
-      <div className="app__charity">
+      {/* <div className="app__charity">
               <div className="app__charity__title">
                 <h1>Covid-19 Charities</h1>
               </div>
@@ -231,7 +231,7 @@ function App() {
                     </div>
                   </div>
               </div>
-      </div>
+      </div> */}
     </>
   );
 }
