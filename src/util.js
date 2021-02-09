@@ -7,11 +7,11 @@ import { Circle, Popup } from 'react-leaflet';
 const typeColors = {
     cases: {
         hex: '#CC1034',
-        multiplier: 800,
+        multiplier: 500,
     },
     recovered: {
         hex: '#7dd71d',
-        multiplier: 1200,
+        multiplier: 500,
     },
     deaths: {
         hex: '#fb4443',
